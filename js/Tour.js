@@ -29,10 +29,10 @@ AFRAME.registerComponent("tour", {
         url: "./assets/thumbnails/CaptainAmerica.jpg",
       },
     ];
-    let prevoiusXPosition = -60;
+    let prevoiusXPosition = -50;
 
     for (var item of thumbNailsRef) {
-      const posX = prevoiusXPosition + 25;
+      const posX = prevoiusXPosition + 20;
       const posY = 10;
       const posZ = -40;
       const position = { x: posX, y: posY, z: posZ };
@@ -68,6 +68,7 @@ AFRAME.registerComponent("tour", {
       x: -5.75,
       y: 0
     });
+    borderLeft.setAttribute('class','border');
     entityElement.appendChild(borderLeft);
     const borderRight = document.createElement('a-entity');
     borderRight.setAttribute('geometry',{
@@ -83,6 +84,7 @@ AFRAME.registerComponent("tour", {
       x: 5.75,
       y: 0
     });
+    borderRight.setAttribute('class','border');
     entityElement.appendChild(borderRight);
     const borderTop = document.createElement('a-entity');
     borderTop.setAttribute('geometry',{
@@ -98,6 +100,7 @@ AFRAME.registerComponent("tour", {
       x:0,
       y:8
     });
+    borderTop.setAttribute('class','border');
     entityElement.appendChild(borderTop);
     const borderBottom = document.createElement('a-entity');
     borderBottom.setAttribute('geometry',{
@@ -113,6 +116,7 @@ AFRAME.registerComponent("tour", {
       x:0,
       y:-8
     });
+    borderBottom.setAttribute('class','border');
     entityElement.appendChild(borderBottom);
     return entityElement;
   },
