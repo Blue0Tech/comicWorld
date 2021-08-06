@@ -4,34 +4,39 @@ AFRAME.registerComponent("tour", {
     this.createCards();
     
   },
-
-  createCards: function () {
-    const thumbNailsRef = [
+  schema: {
+    thumbNailsRef: {type:'array',default:[
       {
         id: "superman",
         title: "Superman",
         url: "./assets/thumbnails/Superman.jpg",
+        desc: "Faster than a speeding bullet. More powerful than a locomotive. Able to leap tall buildings at a single bound. Look! Up in the sky. It's a bird. It's a plane. It's Superman! Yes, it's Superman - strange visitor from another planet who came to Earth with powers and abilities far beyond those of mortal men."
       },
       {
-        id: "Batman",
+        id: "batman",
         title: "Batman",
         url: "./assets/thumbnails/Batman.png",
+        desc: "In his first story, Batman was introduced as uninteresting socialite Bruce Wayne. Donning his iconic costume, he became a merciless crimefighter who dispatched hoodlums with grim satisfaction. “A fitting end for his kind,” Batman announced after knocking a criminal into a vat of acid."
       },
-
+  
       {
         id: "shazam",
         title: "Shazam",
         url: "./assets/thumbnails/Shazam.jpg",
+        desc: "Shazam is a boy who can transform into a man, and save lives. He is very powerful, he is fast and he is bulletproof! There is yet to exist an evil which can defeat him!"
       },
       {
         id: "captain-america",
         title: "Captain America",
         url: "./assets/thumbnails/CaptainAmerica.jpg",
-      },
-    ];
+        desc: "Captain America is the alter ego of Steve Rogers, a frail young artist enhanced to the peak of human perfection by an experimental \"super-soldier serum\" after joining the military to aid the United States government's efforts in World War II."
+      }
+    ]}
+  },
+  createCards: function () {
     let prevoiusXPosition = -50;
 
-    for (var item of thumbNailsRef) {
+    for (var item of this.data.thumbNailsRef) {
       const posX = prevoiusXPosition + 20;
       const posY = 10;
       const posZ = -40;
